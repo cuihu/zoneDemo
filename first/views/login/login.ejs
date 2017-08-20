@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <script src="/javascripts/jquery-1.12.1.min.js" ></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>zone</title>
+
+        <link rel="stylesheet" href="/stylesheets/reset.css">
+        <link rel="stylesheet" href="/stylesheets/supersized.css">
+        <link rel="stylesheet" href="/stylesheets/style1.css">
+</head>
+    <body>
+        <div id="login" class="page-container">
+            <h1>登录</h1>
+                <form action="/login" method="post">
+                    <input type="text" name="username" id="username" class="username" placeholder="用户名" ">
+                    <div id="UserName" class="msg"></div>
+                    <input type="password" name="pwd" id="pwd" class="password" placeholder="用户密码"  >
+                    <div id="Pass" class="msg"></div>
+                    <button type="submit" class="submit_button" id="submitlog" >登    录</button>
+                    <div id="msg" class="error"><span>+</span></div>
+                    </form>
+                    <button id="register" class="submit_button">注  册</button>
+           </div>
+             <div id="registerForm" class="page-container " hidden="true">
+            <h1>注册</h1>
+                <form action="/reg" method="post">
+                    <input type="text" name="RegUsername" id="Regusername" class="username" placeholder="用户名" ">
+                    <div id="RegUsername" class="msg"></div>
+                    <input type="password" name="Regpwd" id="Regpwd" class="password" placeholder="用户密码"  >
+                    <div id="RegPass" class="msg"></div>
+                    <input type="password" name="RegpwdCheck" id="RegpwdCheck" class="password" placeholder="重新输入密码"  >
+                    <div id="RegPassCheck" class="msg"></div>
+                    <button type="submit" class="submit_button">提  交</button>
+                    </form>
+                    <button  id="loginbutton" class="submit_button">登  录</button>
+           </div>
+</body>  
+<script type="text/javascript">
+     var stutus= false ;
+     var password ;
+     var lastName="";
+   // window.onload = hideForm ;
+     $("#username").blur(function(){     
+        if(stutus)return ;
+        if(password!=$("#pwd").val())
+        password=$("#pwd").val();  
+        var userName = $("#username").val();     
+        if(userName==lastName)return ;
+        lastName=userName ;
+        //stutus=true;
+         $.ajax({
+             async:true,
+             //data:{userName:userName},
+             url:"checkuser?userName="+userName,
+             dataType:"jsonp",
+             jsonp:"callback",
+             //type:"get",
+             cache:"false",
+             success:function(data){
+            //alert('fda');
+             da=$.parseJSON(data);
+             if(da.type==0){
+                $("#UserName").html("用户名不存在");
+             }
+             else{
+                $("#UserName").html("");
+             }
+             stutus=false;
+             }
+         })
+     });
+     $("#register").click(function(){
+        $("#login").fadeOut();
+        $("#registerForm").show(800);
+        //$("#registerForm").attr("hidden",false);
+         });
+       $("#loginbutton").click(function(){
+        $("#registerForm").fadeOut();
+        $("#login").show(800);       
+        //$("#registerForm").attr("hidden",false);
+         });
+
+</script>  
+        <!-- Javascript -->
+      
+        <script src="/javascripts/supersized.3.2.7.min.js" ></script>
+        <script src="/javascripts/supersized-init.js" ></script>
+        <script src="/javascripts/scripts.js" ></script> 
+</html>
+

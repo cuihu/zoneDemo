@@ -1,0 +1,395 @@
+
+<div class="container ">
+			<nav class="navbar  navbar-inverse " role="navigation">
+			    <div class="container-fluid">
+			    <div class="navbar-header page-scroll">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			                    <span class="sr-only">Toggle navigation</span>
+			                    Menu <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href=""><%=title%>fd<%=id%></a>
+			            </div>
+			    <div>
+			        <ul class="nav navbar-nav nav-pills navbar-left">
+			            <li ><a  href="#">my</a></li>
+			            <li><a  id="message" href="#">message</a></li>
+			            <li class="active"><a  id="new" href="#">new<span id="newTip" class="badge"></span></a></li>
+			     
+			            <li><a href="#">settings</a></li>
+			            <li><button class="btn btn-link navbar-btn" data-toggle="modal" data-target="#sentmodal">sent new</button>
+			            <li class="dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                    Test
+			                    <b class="caret"></b>
+			                </a>
+			                <ul class="dropdown-menu">
+			                    <li><a href="#">one</a></li>
+			                    <li><a href="#">two</a></li>
+			                    <li><a href="#">tree</a></li>
+			                </ul>
+			            </li>
+			        </ul>
+			        <ul class=" nav navbar-nav navbar-right">
+			      		<li><button class="btn btn-link navbar-btn "><span class="glyphicon glyphicon-log-out">lougou</span></button></li>
+			      	</ul>
+			    </div>
+			    </div>
+			</nav>
+			<div class="container " id="newPageMain">
+				<div class="span2">
+					<div id="comment-show" class="panel-group " id="accordion">
+					    <div class="panel panel-default hidden" id="comment-show-list" >
+					        <div class="panel-heading">
+					            <h4 class="panel-title">
+					                <a data-toggle="collapse" data-parent="#accordion" 
+					                href="#comment">
+					                mac say:
+					                </a>
+					            </h4>
+					        </div>
+					        <div id="comment" class="panel-collapse collapse">
+					            <div class="panel-body">
+					            </div>
+					        </div>
+					    </div>
+					  </div>
+				</div>
+				<div class="container span6">
+					<div id="Main" class="thumbnail">
+						<img  id="MainImg" class="img-responsive img-rounded" src="/img/5.jpg" alt="fasf" width="580" height="250"/>
+						<div class="caption">
+							<h1 >maintest</h1>
+							<div clas="well well-lg">hello</div>
+							<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">add comment</button>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel			" aria-hidden="true">
+    					<div class="modal-dialog">
+        					<div class="modal-content">
+           					 <div class="modal-header">
+               				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;   </button>
+               					 <h4 class="modal-title" id="myModalLabel">your comments</h4>
+           					 </div>
+          				    <div class="modal-body">
+          				    	<textarea id="comment-name" rows="3" class="col-md-8" placeholder="add a name"></textarea>
+          				   	 <textarea id="comment-comments" rows="12" class="col-md-8" placeholder="add some comments"></textarea>
+          				   	 </div>
+           				 <div class="modal-footer">
+                		<button type="button" class="btn btn-default" data-dismiss="modal">cancle</button>
+                		<button type="button" class="btn btn-primary" data-dismiss="modal" id="comment-add">submit</button>
+            			</div>
+     			  		</div><!-- /.modal-content -->
+   					 </div><!-- /.modal -->
+					</div>
+					<div class="modal fade" id="sentmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel			" aria-hidden="true">
+    					<div class="modal-dialog">
+        					<div class="modal-content">
+           					 <div class="modal-header">
+               				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;   </button>
+               					 <h4 class="modal-title" id="myModalLabel">sent...</h4>
+           					 </div>
+          				    <div class="modal-body">
+            				<form enctype="multipart/form-data" id="uploadImgForm" >
+                	    		<div class="form-group">
+        							<div class="col-md-10 tl th">
+           								 <input type="file" name="uploadImage" class="projectfile" id="uploadImg"  />
+            							<p class="help-block">支持jpg、jpeg、png、gif格式，大小不超过2.0M</p>
+       								 </div>
+       								 <textarea id="uploadSent" rows="3" class="col-md-8" name ="uploadSent" placeholder="say some .."></textarea>
+   									 </div>  
+    							<div class="form-group text-center ">
+        						<div class="col-md-10 col-md-offset-1">
+          					    <button type="submit" id="uploadImgButton" value="upload" class="btn btn-primary btn-lg">保存</button>
+       							</div>
+   								</div>
+                			</form>
+      
+                			</div>
+                        <div class="modal-footer">
+                		<button type="button" class="btn btn-default" data-dismiss="modal">cancle</button>
+                		<button type="button" class="btn btn-primary" data-dismiss="modal" id="comment-add">submit</button>
+            			</div>
+     			  	</div><!-- /.modal-content -->
+   					 </div><!-- /.modal -->
+				</div>
+				</div>
+				<div class="container span2">
+					<ul>
+						<li>jack  <button id='b2' class="btn btn-primary">right</button></li>
+						<li>mac  </li>
+						<li>over</li>
+						<li>jesicaa</li>
+						<li><textarea id='fd'></textarea></li>
+				</div>
+			</div>
+				<div class="container" id="newsPageImage">
+					<div class="row">
+					    <div id="t1" class="col-sm-6 col-md-2 hidden"  >
+					         <div class="thumbnail">
+					            <img id="img1" class="img-responsive" src="/img/5.jpg" 
+					             alt="maoxian">
+					            <div class="caption">
+					                <p></p>
+					                    <a href="#" class="btn btn-primary" role="button">
+					                        test
+					                    </a>
+					            </div>
+					         </div>
+					    </div>
+					</div>
+				</div>
+		<div class ="container hidden" id ="messageMainPage">
+			<div class="container span3" id ="frendShow">
+			<table class="table table-hover">
+  				<caption>边框表格布局</caption>
+				  <tbody>
+				    <tr>
+				      <td>Tanmay</td>
+				    </tr>
+				    <tr>
+				      <td>Sachin</td>
+				    </tr>
+				    <tr>
+				      <td>Uma</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+			<div class="container span6" id="messageShow">
+		  		<ul class="pages">
+   				 <li class="chat page">
+   				   <div class="chatArea">
+      			  <ul class="messages"></ul>
+     			 </div>
+    		    <input class="inputMessage" placeholder="Type here..."/>
+   				 </li>
+			</div>
+		</div>
+	<script>
+	var socket = io();
+	var $window = $(window);
+  	var $messages = $('.messages'); // Messages area
+	var $inputMessage = $('.inputMessage'); // Input message input box
+  	var $chatPage = $('.chat.page'); // The chatroom page
+	$('#b2').click(function(){
+		socket.emit('test',$('#fd').val());
+	})
+	var i = 0 ;
+	$('.thumbnail').hover(
+	  function(){
+	    //$(this).find('.caption').slideDown(300);
+	    $(this).find('.caption').fadeIn(300);
+	  },
+	  function(){
+	    //$(this).find('.caption').slideUp(300);
+	    $(this).find('.caption').fadeOut(300);
+	  }
+	);
+	/*
+	function changeImg(this){
+		$("#MainImg").attr("src",this.attr("src"));
+	};
+	*/
+
+$(function() {
+	var userName = <%=title%>
+	var userId = <%= id %>
+	var sentInfo ={};
+	$("#message").click(function(){
+		$("#new").parent().removeClass("active");
+		$("#message").parent().addClass("active");
+		$("#newPageMain").addClass("hidden");
+		$("#newsPageImage").addClass("hidden");
+		$("#messageMainPage").removeClass("hidden");
+	});
+	$("#new").click(function(){
+		$("#message").parent().removeClass("active");
+		$("#new").parent().addClass("active");
+		$("#newPageMain").removeClass("hidden");
+		$("#newsPageImage").removeClass("hidden");
+		$("#messageMainPage").addClass("hidden");
+	});
+	$(window).on('load',function(){
+		var user={'username':<%=title%>};
+		socket.emit('log',JSON.stringify(user));
+		//if(<%=sents%> == null)return ;
+		<% sents.forEach(function(sent,index){ //first fun
+			%>
+		var i = 0 ;
+		var clone = $('#t1').clone(true) ;
+    	i++;
+    	clone.attr('id','t'+i);
+    	clone.find("img").attr('img','#img'+i) ;
+    	clone.find("img").attr('src','../Images/<%=sent.imgAddr%>') ;
+       	clone.find("p").html('<%=sent.sent%>');
+       	var vie = clone.attr("class").replace(/hidden/,"");
+       	clone.attr("class",vie);
+       	//console.log(clone.attr("class"));
+    	$("#t"+i).after(clone);   	
+    	var b = "<%=JSON.stringify(sent)%>" ;
+    	var d = b.replace(/\&\#34\;/g,"\"");
+    	//console.log(d);
+    	var c = JSON.parse(d);
+		//console.log(c.userId);
+		b = "<%=JSON.stringify(sent.time)%>" ;
+		d =	b.replace(/\&\#34\;/g,"\"");
+		//console.log(d);
+		var k = JSON.parse(d);
+		console.log(b);
+		sentInfo['<%=sent.imgAddr%>'] = c;
+		sentInfo['<%=sent.imgAddr%>']['Comment'] = k ;
+		<% }) %>
+		})
+    $('#myModal').on('hide.bs.modal',
+    function() {
+        //alert($(#name).text()) ;
+        //alert('one') ;
+       //alert(i) ;
+    });
+    $('#myModal').on('show.bs.modal',
+    function() {
+        //alert($(#name).text()) ;
+        //alert('two') ;        
+    });
+    var commentIndex = 0 ;
+    $('#comment-add').on('click',function(){
+    	var clone = $('#comment-show-list').clone() ;
+    	clone.attr('id','comment-show-list'+commentIndex);
+    	clone.find("a").attr('href','#comment'+commentIndex) ;
+    	clone.find("#comment").attr('id','comment'+commentIndex) ;
+       	var nowimgAddr = $("#MainImg").attr("src").replace(/\.\.\/Images\//,"");
+       	clone.find("a").html(userName);  
+       	clone.removeClass('hidden');
+       	var comment = $("#comment-comments").val();     	
+    	clone.find(".panel-body").html(comment);
+    	commentIndex++;
+    	//alert(clone.find("a").html());
+    	 	var stutus = false ;
+    	 	if($("#MainImg").find('h1').html()=='maintest')
+    	 	{
+    	 		console.log('this is test ,no comment');
+    	 		return ;
+    	 	}
+    	 	//console.log(comment);
+    	    $.ajax({
+             async:true,
+             //data:{userName:userName},
+             url:"/sentComment?userName="+userName+"&imgAddr="+nowimgAddr+
+             "&sentComment="+comment,
+             dataType:"jsonp",
+             jsonp:"callback",
+             //type:"get",
+             cache:"false",
+             success:function(data){
+            //alert('fda');
+             da=$.parseJSON(data);
+             if(da.type==0){
+                console.log('faild');
+             }
+             else if (da.type==1){
+                console.log('success');
+                socket.emit('newsadd');
+                clone.appendTo('#comment-show');
+     			$("#comment-name").val('');
+     			$('#comment-comments').val('');
+             }
+             stutus=false;
+             }
+         })	
+ 
+
+    });
+    $("#ti").each(function(){
+        var k=$(this);
+        });
+        for(var i= 1 ; i < 4 ; i++)
+        {
+        	$("#t"+i).bind('click',i,function(e){
+        		$("#Main").find("#MainImg").attr("src",$(this).find("#img"+e.data).attr("src"));
+        		$("#Main").find("h1").html($(this).find("p").html());
+        		var imgAddr=$(this).find("#img"+e.data).attr("src").split('/')[2];
+        		//console.log(imgAddr);
+        		sentComement=sentInfo[imgAddr].time ;//bug
+        		$('#comment-show-list').nextAll(".panel").addClass('hidden');
+        		sentComement.forEach(function(comment,index){
+        				commentIndex++;
+        				//console.log(comment.CommentUserName);
+        				if($('#comment-show-list'+index).attr("id")==null){
+        					var clone = $('#comment-show-list').clone() ;
+        					clone.attr('id','comment-show-list'+index);
+        					clone.find("a").attr('href','#comment'+index) ;
+        					clone.find("#comment").attr('id','comment'+index) ;
+        					clone.find("a").html(comment.CommentUserName); 
+        					clone.find(".panel-body").html(comment.CommentText);
+        					clone.removeClass('hidden');
+        					clone.appendTo('#comment-show');
+        				}        	
+        				else{
+        					console.log('there');
+        					$('#comment-show-list'+index).removeClass('hidden');
+        					$('#comment-show-list'+index).find("a").html(comment.commentUserName);
+        					$('#comment-show-list'+index).find('.panel-body').html(comment.commentText);
+        				}	
+        					    	  									
+        		})
+
+        		//alert();
+        	});
+        };
+   	projectfileoptions = {
+       	showUpload : false,
+        language : 'zh',
+        allowedPreviewTypes : [ 'image' ],
+        allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+        maxFileSize : 2000,
+    	};
+		// 文件上传框	
+	$('input[class=projectfile]').each(function() {
+  		var imageurl = $(this).attr("value");
+    	if (imageurl) {
+       	var op = $.extend({
+            initialPreview : [ // 预览图片的设置
+           	 "<img src='" + imageurl + "' class='file-preview-image'>", ]
+        	}, projectfileoptions);
+
+        	$(this).fileinput(op);
+    		} else {
+        	$(this).fileinput(projectfileoptions);
+    		}
+		});
+		
+	$("#uploadImgForm").bind("submit",function(e){
+		//alert($("#imaget")[0].files[0].lastModified);
+		//lastModified ,lastModifieldDate,name,size,type,..
+		//alert('fas');
+		e.stopPropagation();
+		e.preventDefault();
+		var img = $("#uploadImgForm")[0];
+		var text = $("#uploadImgForm")[1]
+		//var _files = img.files[0];	
+		var Data = new FormData($("#uploadImgForm")[0]);//表单组，这是第一个表单
+		console.log(Data.get("uploadSent"));
+		$.ajax({
+			type : 'post',
+			dataType :'json',
+			url:'/uploadNewsImg',
+			data:Data ,
+			contentType : false ,
+			processData:false
+		}).done(function(data,status){
+				socket.emit('newsadd');
+				console.log('success');
+			}).fail(function(err){
+				console.log('faild');
+			});
+		});
+
+	socket.on('pageNewsAdd',function(data){
+		console.log('fsd');
+		var newsaddnum = $("#newTip").html() ;
+		$("#newTip").html((new Number(newsaddnum))+1) ;
+
+	})
+
+});
+</script>
